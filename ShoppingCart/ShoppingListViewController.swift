@@ -8,9 +8,7 @@
 
 import UIKit
 
-protocol EmojiCreationDelegate {
-    func emojiGroupCreated(emojigroup: (String, String))
-}
+
 
 class ShoppingViewController: UIViewController {
     
@@ -49,51 +47,5 @@ extension ShoppingViewController: UITableViewDataSource {
 extension ShoppingViewController: UITableViewDelegate { }
 
 
-// MARK: - Emoji Creation Delegate Methods
-extension ShoppingViewController: EmojiCreationDelegate {
-    
-    func emojiGroupCreated(emojigroup: (String, String)) {
-        emojis.append(emojigroup)
-        tableView.reloadData()
-    }
-    
-}
-
-// MARK: - Segue Methods
-extension ShoppingViewController {
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destVC = segue.destinationViewController as! EmojiSelectionViewController
-        destVC.emojiDelegate = self
-    }
-    
-}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-// MARK: - Produce Dummy Data
-extension ShoppingViewController {
-    
-    func dummyData() {
-        emojis = [
-            ("😄", "🤔"),
-            ("👁", "💑"),
-            ("💄", "💋"),
-            ("💼", "🦄"),
-            ("🐗", "🌫")
-        ]
-        tableView.reloadData()
-    }
-    
-}
