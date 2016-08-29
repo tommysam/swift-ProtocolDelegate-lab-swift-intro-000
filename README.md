@@ -1,4 +1,4 @@
-# Shopping Cart
+# Shopping Cart Lab 
 
 
 ![Drawing](http://i.imgur.com/KcAYJFV.jpg?1)  
@@ -6,13 +6,13 @@
 > Role models are only of limited use. For no-one is as important, potentially powerful and as key in your life and world as you. -[Rasheed Ogunlaru](https://en.wikipedia.org/wiki/Rasheed_Ogunlaru)
  
 ---
+## Overview
 
+In this lab, you'll create an app that works like a shopping cart. 
 
 ![](http://i.imgur.com/2NMfm0Y.png?1)
 
 # Instructions
-
-It is your job to create an application that works like a shopping cart (sort of).
 
 With your knowledge of delegation, we will use this programming technique to allow two ViewControllers to be able to communicate to each other. Similar to the Mom & Baby relationship we created in the prior lesson.
 
@@ -135,16 +135,5 @@ Now everything is connected and when the SAVE button is tapped, it should commun
 Congrats!
 
 Feel free to `print()` statements throughout the various functions here to confirm that everything is getting called correctly and in what order. This is an important and powerful concept to understand.
-
-
-
-
-
-
-
-
-
-
-
 
 <a href='https://learn.co/lessons/ProtocolDelegate' data-visibility='hidden'>View this lesson on Learn.co</a>
