@@ -30,13 +30,13 @@ class ShoppingViewController: UIViewController {
 // MARK: - UITableViewDataSource Methods
 extension ShoppingViewController: UITableViewDataSource {
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return emojis.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("EmojiCell", forIndexPath: indexPath) as! EmojiCellTableViewCell
-        let currentEmojiLove = emojis[indexPath.row]
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EmojiCell", for: indexPath) as! EmojiCellTableViewCell
+        let currentEmojiLove = emojis[(indexPath as NSIndexPath).row]
         cell.firstEmojiLabel.text = currentEmojiLove.0
         cell.secondEmojiLabel.text = currentEmojiLove.1
         return cell
