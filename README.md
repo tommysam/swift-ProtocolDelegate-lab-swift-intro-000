@@ -46,7 +46,7 @@ This is made up of
 **(2)** - Create outlets from the two UITextFields and an action for the UIButton to the 
 `EmojiSelectionViewController.swift` file.
 
-**(3)** - Head back to the `ShoppingViewController.swift` file. Near the top of this file, right below the `import UIKit` line of code, we will be creating a protocol.
+**(3)** - Head back to the `ShoppingListViewController.swift` file. Near the top of this file, right below the `import UIKit` line of code, we will be creating a protocol.
 
 Create a protocol called `EmojiCreationDelegate`. In your implementation of this protocol should be one requirement. A function called `emojiGroupCreated` that takes in one argument called `emojiGroup` of type (`String`, `String`).
 
@@ -60,9 +60,9 @@ The two parenthesis seem weird when calling that function (we'll go into that mo
 
 So now that we created this protocol, lets have someone adopt and conform to it.
 
-**(4)** In the `ShoppingViewController.swift` file, scroll down to the bottom and create an extension on the `ShoppingViewController` where within the extension you're adopting the `EmojiCreationDelegate`. Very similar to how it's being done with the Data Source and Delegate protocols above it for the Table View.
+**(4)** In the `ShoppingListViewController.swift` file, scroll down to the bottom and create an extension on the `ShoppingViewController` where within the extension you're adopting the `EmojiCreationDelegate`. Very similar to how it's being done with the Data Source and Delegate protocols above it for the Table View.
 
-**(5)** Conform to this protocol within your newly made extension by implementing the `emojiGroupCreated(_:)` method that's part of this protocol. 
+**(5)** Conform to this protocol within your newly made extension by implementing the `emojiGroupCreated(emojiGroup:)` method that's part of this protocol. 
 
 Before you start writing code, take a look near the top of this file. This Table View will display the emoji's from our array called `emojis`.
 
@@ -72,9 +72,9 @@ var emojis: [(String, String)] = []
 
 `emojis` is an instance property of type [(`String`, `String`)] where we then assign it a value of an empty array. What's stored in this array are tuples.
 
-We know that our `emojiGroupCreated(_:)` method takes in a tuple as its argument. So in your implementation of this method, append to this `emojis` variable the tuple passed into this function.
+We know that our `emojiGroupCreated(emojiGroup:)` method takes in a tuple as its argument. So in your implementation of this method, append to this `emojis` variable the tuple passed into this function.
 
-Right below that line of code, you need to do one more thing. We need to tell our `tableView` property to do something.. because the data it's relying on has changed! We need to tell it to reload its data. 
+Right below that line of code, you need to do one more thing. We need to tell our `tableView` property to do something, because the data it's relying on has changed! We need to tell it to reload its data. 
 
 So type this line of code in below where you append the tuple passed in to the `emojis` property.
 
@@ -88,17 +88,17 @@ tableView.reloadData()
 
 Considering this is a lot to do in one line of code, consider breaking this down into chunks.
 
-First grab the text from the left text field and store that in a constant. Grab the text from the right text field and store that in a constant. Now create a new constant which is a tuple made up of those two `String`'s you just grabbed from the text fields. _Then_ call on the `emojiGroupCreated(_:)` on your `emojiDelegate` instance property passing in this new tuple you created.
+First grab the text from the left text field and store that in a constant. Grab the text from the right text field and store that in a constant. Now create a new constant which is a tuple made up of those two `String`'s you just grabbed from the text fields. _Then_ call on the `emojiGroupCreated(emojiGroup:)` on your `emojiDelegate` instance property passing in this new tuple you created.
 
 Below that delegate method call (still in the implementation of your button tapped method), type this line of code as we will want to dismiss our View Controller.
 
 ```swift
-dismissViewControllerAnimated(true, completion: nil)
+dismiss(animated: true, completion: nil)
 ```
 
 If we were to now run our code, would this all work? Not yet, do you know why? If you think back to the Mother / Baby relationship in the prior reading, we established a connection between the two. Here, we've set it all up.. but we haven't yet established the connection.
 
-**(8)** - In the `ShoppingListViewController.swift` file, we need to implement the `prepareForSegue(_:sender:)` method inherit to all `UIViewController`'s.
+**(8)** - In the `ShoppingListViewController.swift` file, we need to implement the `prepare(for segue:, sender:)` method inherit to all `UIViewController`'s.
 
 A reminder on how segue's work. We created this segue in the `Main.storyboard` file for you.
 
@@ -106,10 +106,10 @@ A reminder on how segue's work. We created this segue in the `Main.storyboard` f
 
 The segue was setup when someone goes to tap the + button. When that button is tapped, we travel down the segue (if you want to think of the segue as a road) to its destination which is the second view controller.
 
-So when someone taps that + button, before we jump to our destination the `prepareForSegue(_:sender:)` method is called on the View Controller from which we're leaving from (like leaving home to go to a vacation spot). 
+So when someone taps that + button, before we jump to our destination the `prepare(for segue:, sender:)` method is called on the View Controller from which we're leaving from (like leaving home to go to a vacation spot). 
 
 ```swift
-override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+override func prepare(for segue: UIStoryboardSegue, sender: Any?{
         
 }
 ```
@@ -119,7 +119,7 @@ One of the arguments to this function is called `segue` which is of type `UIStor
 So lets get a hold of our destination view controller, like so:
 
 ```swift
-let destVC = segue.destinationViewController as! EmojiSelectionViewController
+let destVC = segue.destination as! EmojiSelectionViewController
 ```
 
 Now that we have a hold of where we're going, `self` needs to become the `emojiDelegate` of the second view controller. Think of the left View Controller as the parent, and the right one as its child.
@@ -134,6 +134,6 @@ Now everything is connected and when the SAVE button is tapped, it should commun
 
 Congrats!
 
-Feel free to `print()` statements throughout the various functions here to confirm that everything is getting called correctly and in what order. This is an important and powerful concept to understand.
+Feel free to use `print()` statements throughout the various functions here to confirm that everything is getting called correctly and in what order. This is an important and powerful concept to understand.
 
 <a href='https://learn.co/lessons/ProtocolDelegate' data-visibility='hidden'>View this lesson on Learn.co</a>

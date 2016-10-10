@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7C0B4F72C7D95D306AE922B1 /* Pods_ShoppingCart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 417FCC8B36C065E5D96A43FB /* Pods_ShoppingCart.framework */; };
 		7DADE3181D3FC16800792225 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DADE3171D3FC16800792225 /* AppDelegate.swift */; };
 		7DADE31D1D3FC16800792225 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DADE31B1D3FC16800792225 /* Main.storyboard */; };
 		7DADE31F1D3FC16800792225 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DADE31E1D3FC16800792225 /* Assets.xcassets */; };
@@ -18,9 +17,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0FD018796A948E999A67A4C3 /* Pods-ShoppingCart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingCart.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingCart/Pods-ShoppingCart.release.xcconfig"; sourceTree = "<group>"; };
-		417FCC8B36C065E5D96A43FB /* Pods_ShoppingCart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShoppingCart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		51E13282258B5CEE2E4810AF /* Pods-ShoppingCart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingCart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingCart/Pods-ShoppingCart.debug.xcconfig"; sourceTree = "<group>"; };
 		7DADE3141D3FC16800792225 /* ShoppingCart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingCart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DADE3171D3FC16800792225 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DADE31C1D3FC16800792225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -30,7 +26,6 @@
 		7DDBFF4E1D5B76C80023149C /* ShoppingListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListViewController.swift; sourceTree = "<group>"; };
 		7DDBFF501D5B7B6C0023149C /* EmojiCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiCellTableViewCell.swift; sourceTree = "<group>"; };
 		7DFD61AF1D5BA195000ACBE8 /* EmojiSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiSelectionViewController.swift; sourceTree = "<group>"; };
-		F4E5B18FE952FF28154080F3 /* Pods_ShoppingCartTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShoppingCartTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,29 +33,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C0B4F72C7D95D306AE922B1 /* Pods_ShoppingCart.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		77AE30D271407871F32BAF43 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				417FCC8B36C065E5D96A43FB /* Pods_ShoppingCart.framework */,
-				F4E5B18FE952FF28154080F3 /* Pods_ShoppingCartTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		7DADE30B1D3FC16800792225 = {
 			isa = PBXGroup;
 			children = (
 				7DADE3161D3FC16800792225 /* ShoppingCart */,
 				7DADE3151D3FC16800792225 /* Products */,
-				DD66A6DD3531B1BBEA32A297 /* Pods */,
-				77AE30D271407871F32BAF43 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,15 +78,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		DD66A6DD3531B1BBEA32A297 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				51E13282258B5CEE2E4810AF /* Pods-ShoppingCart.debug.xcconfig */,
-				0FD018796A948E999A67A4C3 /* Pods-ShoppingCart.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -111,12 +85,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7DADE3311D3FC16800792225 /* Build configuration list for PBXNativeTarget "ShoppingCart" */;
 			buildPhases = (
-				12BB70497FC8F5F4A572412A /* [CP] Check Pods Manifest.lock */,
 				7DADE3101D3FC16800792225 /* Sources */,
 				7DADE3111D3FC16800792225 /* Frameworks */,
 				7DADE3121D3FC16800792225 /* Resources */,
-				2603C83344E54FB5B15EFC50 /* [CP] Embed Pods Frameworks */,
-				F1650467AF470DB16D17218A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -134,7 +105,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Gamesmith, LLC";
 				TargetAttributes = {
 					7DADE3131D3FC16800792225 = {
@@ -173,54 +144,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		12BB70497FC8F5F4A572412A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		2603C83344E54FB5B15EFC50 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShoppingCart/Pods-ShoppingCart-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F1650467AF470DB16D17218A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShoppingCart/Pods-ShoppingCart-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7DADE3101D3FC16800792225 /* Sources */ = {
@@ -341,7 +264,6 @@
 		};
 		7DADE3321D3FC16800792225 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 51E13282258B5CEE2E4810AF /* Pods-ShoppingCart.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ShoppingCart/Info.plist;
@@ -354,7 +276,6 @@
 		};
 		7DADE3331D3FC16800792225 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0FD018796A948E999A67A4C3 /* Pods-ShoppingCart.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ShoppingCart/Info.plist;
