@@ -9,7 +9,7 @@
 import UIKit
 
 protocol EmojiCreationDelegate {
-    func emojiGroupCreated(emojigroup: (String, String))
+    func emojiGroupCreated(_ emojigroup: (String, String))
 }
 
 class ShoppingViewController: UIViewController {
@@ -32,13 +32,13 @@ class ShoppingViewController: UIViewController {
 // MARK: - UITableViewDataSource Methods
 extension ShoppingViewController: UITableViewDataSource {
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return emojis.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("EmojiCell", forIndexPath: indexPath) as! EmojiCellTableViewCell
-        let currentEmojiLove = emojis[indexPath.row]
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EmojiCell", for: indexPath) as! EmojiCellTableViewCell
+        let currentEmojiLove = emojis[(indexPath as NSIndexPath).row]
         cell.firstEmojiLabel.text = currentEmojiLove.0
         cell.secondEmojiLabel.text = currentEmojiLove.1
         return cell
@@ -52,7 +52,7 @@ extension ShoppingViewController: UITableViewDelegate { }
 // MARK: - Emoji Creation Delegate Methods
 extension ShoppingViewController: EmojiCreationDelegate {
     
-    func emojiGroupCreated(emojigroup: (String, String)) {
+    func emojiGroupCreated(_ emojigroup: (String, String)) {
         emojis.append(emojigroup)
         tableView.reloadData()
     }
@@ -62,8 +62,8 @@ extension ShoppingViewController: EmojiCreationDelegate {
 // MARK: - Segue Methods
 extension ShoppingViewController {
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destVC = segue.destinationViewController as! EmojiSelectionViewController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destVC = segue.destination as! EmojiSelectionViewController
         destVC.emojiDelegate = self
     }
     

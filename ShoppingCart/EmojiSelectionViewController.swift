@@ -25,14 +25,14 @@ class EmojiSelectionViewController: UIViewController {
 // MARK: - Save Button Methods
 extension EmojiSelectionViewController {
     
-    @IBAction func saveButtonTapped(sender: UIButton) {
+    @IBAction func saveButtonTapped(_ sender: UIButton) {
         guard let firstEmoji = leftTextField.text,
-            secondEmoji = rightTextField.text
+            let secondEmoji = rightTextField.text
             else { return }
         
         let emojiGroup = (firstEmoji, secondEmoji)
         emojiDelegate?.emojiGroupCreated(emojiGroup)
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
 }
