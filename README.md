@@ -22,7 +22,7 @@ The finished product.
 
 Some of this has already been built for you. 
 
-Open the `ShoppingCart.xcworkspace` file.
+Open the `ShoppingCart.xcodeproj` file.
 
 Look in the `ShoppingListViewController.swift` & `Main.storyboard` file to see what it is that has been built for you. If you were to run the app, it would look like this,
 
