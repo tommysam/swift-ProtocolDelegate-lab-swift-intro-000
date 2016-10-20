@@ -111,7 +111,7 @@ The segue was setup when someone goes to tap the + button. When that button is t
 So when someone taps that + button, before we jump to our destination the `prepare(for:sender:)` method is called on the View Controller from which we're leaving from (like leaving home to go to a vacation spot). 
 
 ```swift
-override func prepare(for segue: UIStoryboardSegue, sender: Any?{
+override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         
 }
 ```
